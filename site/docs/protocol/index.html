@@ -1,0 +1,294 @@
+<html>
+  <head>
+    <title>Simple Mail Transfer Protocol</title>
+    <link rel="stylesheet" type="text/css" href="gatsinski.github.io/simple-hugo-website/css/main.css">
+  </head>
+  <body>
+    
+      <div class="grid no-gap">
+  <div class="col-12">
+    <ul class="menu">
+      <li>
+        <a href="gatsinski.github.io/simple-hugo-website/" class="first_level_menu_item">
+          Начало
+        </a>
+      </li>
+      <li>
+        <a href="gatsinski.github.io/simple-hugo-website/history/" class="first_level_menu_item">
+          История
+        </a>
+      </li>
+      <li>
+        <a href="gatsinski.github.io/simple-hugo-website//protocol" class="first_level_menu_item">
+          Протокол
+        </a>
+        <div class="second_level_menu">
+          <a href="gatsinski.github.io/simple-hugo-website/protocol/overview/" class="second_level_menu_item">
+            Въведение
+          </a>
+          <a href="gatsinski.github.io/simple-hugo-website/protocol/client-server-model/" class="second_level_menu_item">
+            Клиент-сървър модел
+          </a>
+          <a href="gatsinski.github.io/simple-hugo-website/protocol/commands/" class="second_level_menu_item">
+            Команди в SMTP
+          </a>
+          <a href="gatsinski.github.io/simple-hugo-website/protocol/example/" class="second_level_menu_item">
+            Примерна SMTP сесия
+          </a>
+          <a href="gatsinski.github.io/simple-hugo-website/protocol/mime/" class="second_level_menu_item">
+            MIME
+          </a>
+        </div>
+      </li>
+      <li>
+        <a href="gatsinski.github.io/simple-hugo-website/about/" class="first_level_menu_item">
+          За сайта
+        </a>
+        <div class="second_level_menu">
+          <a href="gatsinski.github.io/simple-hugo-website/about/" class="second_level_menu_item">
+            За сайта
+          </a>
+          <a href="gatsinski.github.io/simple-hugo-website/sitemap/" class="second_level_menu_item">
+            Карта са сайта
+          </a>
+          <a href="gatsinski.github.io/simple-hugo-website/sources/" class="second_level_menu_item">
+            Източници
+          </a>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="col-12">
+    <div class="header-image"></div>
+  </div>
+</div>
+
+    
+
+
+    <div class="grid no-gap">
+      <div class="col-12 col-sm-6">
+        <div class="content">
+          
+<ul>
+  
+    <li>
+      <h2><a href="gatsinski.github.io/simple-hugo-website/protocol/overview/">Въведение</a></h2>
+      14.12.2017 г.
+      
+      
+      
+      <p style="font-size:18px;"><p>
+  <img src="/images/logo.jpg" width="200px">
+  <br>
+  Протоколът SMTP служи за прехвърляне на електронна поща от системата,
+  източник на писмото, до системата, върху която се намира пощенската кутия (ПК)
+  на крайния получател. Обменът се реализира чрез протоколни взаимодействия
+  между две страни, SMTP изпращач и SMTP получател.
+</p>
+</p>
+
+    </li>
+  
+    <li>
+      <h2><a href="gatsinski.github.io/simple-hugo-website/protocol/client-server-model/">Моделът SMTP - модел клиент-сървър.</a></h2>
+      14.12.2017 г.
+      
+      
+      
+      <p style="font-size:18px;"><p>SMTP получателят стартира услугата, очаквайки установяване на връзка на порт 25. При наличие на заявка за изпращане на писмо, SMTP изпращачът установява TCP връзка със SMTP получателя. В последствие SMTP изпращачът и получателят обменят команди и отговори, дакато връзката не бъде прекратена. Крайната цел е писмото да бъде прехвърлено от файловата сисема на изпращача към файловата система на получателя.</p>
+
+<p>Възможно е писмото дабъде прехвърлено чрез поетапно препредаване посредством множество междинни SMTP възли.</p>
+
+<p>С цел определяне на маршрута на писмото и на евентуалния отговор за грешка, SMTP протоколът определя и поддържа актуални във всеки момент следните пътища:</p>
+
+<ul>
+<li>прав път - указва маршрута на писмото от SMTP изпращача до пощенската кутия на получателя на писмото.</li>
+<li>обратен път - указва маршрута на евентуален отговор за грешка от SMTP получателя до пощенската кутия на подателя на писмото.</li>
+</ul>
+
+<p>Пътят се описва във вида:
+    <strong>@AAA,@BBB,@CCC, &hellip;:HRISTO@DDD</strong>, където <strong>AAA</strong>, <strong>BBB</strong>, <strong>CCC</strong> и <strong>DDD</strong> са имената на пощенските сървъри по маршрута, а <strong>HRISTo</strong> е име на пощенска кутия.</p>
+
+<p>По време на обмена между два SMTP сървъра:</p>
+
+<ul>
+<li>първият адрес в правия път трябва да е винаги този на SMTP получателя.</li>
+<li>първият адрес в обратния път трябва да е винаги този на SMTP изпращача.</li>
+</ul>
+
+<p>При тази концепция, по време на преминаването на писмото през междинните SMTP сървъри, всеки от тях премахва своя адрес от правия път и го добавя в обратния. Така постепенно елементите от правия път се преместват към обратния път.</p>
+
+<p>По време на своето съществуване SMTP сесията преминава през няколко състояния.</p>
+
+<ul>
+<li>след като TCP връзката е установина и SMTP получателят е изпратил приветстващо съобщение, сесията влиза в състояне &ldquo;Одобрение&rdquo; (AUTHORIZATION).</li>
+<li>в това състояние SMTP изращачък трябва да се представи на SMTP получателя.</li>
+<li>след представянето на SMTP изпращача, сесията преминава в състояние &ldquo;Изчакване&rdquo; (WAITING).</li>
+<li>в това състояние SMTP изпращачът може да стартира изпращане на писмо към SMTP получателя.</li>
+<li>в състояние &ldquo;Трансакция&rdquo; (TRANSACTION) се изпраща едно писмо, след което се осъществява връщане в състояние &ldquo;Изчакване&rdquo;.</li>
+<li>прекратяването на сесията започва по инициатива на SMTP изпращача чрез команда QUIT, която води до прекъсване на TCP връзката.</li>
+</ul>
+</p>
+
+    </li>
+  
+    <li>
+      <h2><a href="gatsinski.github.io/simple-hugo-website/protocol/commands/">Команди в SMTP</a></h2>
+      14.12.2017 г.
+      
+      
+      
+      <p style="font-size:18px;">
+
+<p>Командите в SMTP представляват ASCII символни низове, завършващи в последователността CR LF. Те се представят чрез мнемонични кодове от 4 букви и имат до един аргумент с променлива дължина.</p>
+
+<p>Основни команди в протокола:</p>
+
+<ul>
+<li><strong>HELO</strong> &lt;адрес на изпращач&gt;</li>
+<li><strong>MAIL</strong> FROM &lt;обратен път&gt;</li>
+<li><strong>RCPT</strong> TO &lt;прав път&gt;</li>
+<li><strong>DATA</strong></li>
+<li><strong>RSET</strong></li>
+<li><strong>HELP</strong> [&lt;код на команда&gt;]</li>
+<li><strong>NOOP</strong></li>
+<li><strong>QUIT</strong></li>
+</ul>
+
+<h2 id="описание-на-командите">Описание на командите</h2>
+
+<ul>
+<li><p><strong>HELO</strong> &lt;адрес на изпращач&gt;
+Служи за идентификация на SMTP изпращача пред SMTP получателя. Аргументът съдържа интернет адреса на системата SMTP изпращач.</p></li>
+
+<li><p><strong>MAIL FROM</strong> &lt;обртен път&gt;
+Инициализира транзакция за обмен на писмо, което ще бъде изпратено до една или няколко потребителски пощенски кутии. Обратният път служи за уведомяване на подателя на писмото, в случай на възникване на грешка в процеса на доставянето му.</p></li>
+
+<li><p><strong>RCPT TO</strong> &lt;прав път&gt;
+Указва крайния получател на писмото. Ако писмото трябва да бъде доставено до множество плучатели, командата се издава многократно.</p></li>
+
+<li><p><strong>DATA</strong>
+Определя началото на изпращане на писмото. При получаване на тази команда SMTP получателя изпраща положителен отговор и тълкува слеващите приети редове на съдържание на писмото.
+Краят на писмото се определя от ред, съдържащ <CR LF>. <CR LF>.
+При получаването му SMTP получателят изпраща положителен отговор. С цел съхраняване на прозрачността на данните от писмото, се спазва следната процедура.</p>
+
+<ul>
+<li>Преди да се изпрати поредния ред от писмото SMTP изпращачът анализира първият му знак. Ако този знак е точка, тя бива дублирана.</li>
+<li>SMTP получателят анализира получените редове. Ако първият символ е точка и редът не съдържа други символи, тове е индикатор за край на писмото. Ако първият символ е точка и редът съдържа други символи, точката бива премахната.</li>
+</ul></li>
+
+<li><p><strong>RSET</strong>
+Прекратява изпълнението на текущата транзакция.</p></li>
+
+<li><p><strong>HELP</strong> [&lt;код на команда&gt;]
+Командата изисква SMTP получателят да върне помощна информация за заявената команда. Ако аргументът липсва, се връща информация за всички команди, които SMTP получателят може да изпълни.</p></li>
+
+<li><p><strong>NOOP</strong>
+Командата не предизвиква никакви действия. SMTP получателят връща положителен отговор ОК.</p></li>
+
+<li><p><strong>QUIT</strong>
+Командата казва на SMTP получателят да прекрати TCP връзката.</p></li>
+</ul>
+
+<h2 id="ограничения-в-реда-на-извикване-на-командите">Ограничения в реда на извикване на командите</h2>
+
+<ul>
+<li>Първата команда от всяка сесия трябва да бъде <em>HELO</em>.</li>
+<li>Командите <em>NOOP</em> и <em>HELP</em> могат да се използват по всяко време на сесията.</li>
+<li>Командата <em>MAIL FROM</em> инициализира транзакция. В рамките на една транзакция могат да бъдат издавани една или няколко команди <em>RCPT</em> и една команда <em>DATA</em>.</li>
+<li>Текущата транцакция може да бъде анулирана чрез командата <em>RSET</em>. Всяка сесия може да съдържа 0 или множество транзакции.</li>
+<li>Последна в сесията се издава командата <em>QUIT</em>.</li>
+</ul>
+</p>
+
+    </li>
+  
+    <li>
+      <h2><a href="gatsinski.github.io/simple-hugo-website/protocol/example/">Примерна SMTP сесия</a></h2>
+      14.12.2017 г.
+      
+      
+      
+      <p style="font-size:18px;"><p>R: 220 mgate.tu-sofia.bg EG4000/SMtp Ready</p>
+
+<p>S: HELO tu-sofia.bg</p>
+
+<p>R: 250 Requieted mail action okey, completed</p>
+
+<p>S: MAIL FROM: petar@tu-sofia.bg</p>
+
+<p>S: 250 OK</p>
+
+<p>S: RCPT TO: georgi@gmail.com</p>
+
+<p>R: 550 No such user here</p>
+
+<p>S: RCPT TO: dimitar@tu-sofia.bg</p>
+
+<p>R: 250 OK</p>
+
+<p>S: DATA</p>
+
+<p>R: 354 Start mail input ; end with <CRLF>.<CRLF></p>
+
+<p>S: From: Petar Ivanov</p>
+
+<p>S: Subject: The Next Meeing of the Board</p>
+
+<p>S: To: Ivan@tu-sofia.bg</p>
+
+<p>S:</p>
+
+<p>S: Срещата ни ще се състои следващата седмица</p>
+
+<p>S: в сряда от 15:00 ч.</p>
+
+<p>S:             Петър.</p>
+
+<p>S:</p>
+
+<p>R: 250 OK</p>
+
+<p>S: QUIT</p>
+
+<p>R: 221 Closing connection</p>
+
+<p>Писмото ще бъде получено от Ivan и Dimitar, но не и от Georgi, поради грешен E-mail адрес.</p>
+</p>
+
+    </li>
+  
+    <li>
+      <h2><a href="gatsinski.github.io/simple-hugo-website/protocol/mime/">Изпращане на писмо във формат MIME</a></h2>
+      14.12.2017 г.
+      
+      
+      
+      <p style="font-size:18px;"><p><strong>MIME</strong> (multipurpose Internet Mail Extension) е стандарт, предложен от лабораториите <em>Bell Communications</em> през 1991 г. Има за цел разширение на възможностите на елетронната поща и позволява вмъкването в писмото на документи от различен тип (картинки, звук, текст и др.).</p>
+
+<p>MIME съдържа служебни символни описатели, които се използват за определяне на типа на прикачените към писмото документи, а също и за определяне на типа на документите, пренасяни чрез протокола HTTP.</p>
+</p>
+
+    </li>
+  
+</ul>
+
+        </div>
+      </div>
+    </div>
+
+    
+      <div class="grid no-gap">
+  <div class="col-12">
+    <div class="footer">
+      &copy; 2017 Hristo Gatsinski
+    </div>
+  </div>
+</div>
+
+    
+
+    <script type="text/javascript" src="gatsinski.github.io/simple-hugo-website/js/main.js"></script>
+  </body>
+</html>
