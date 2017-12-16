@@ -1,0 +1,57 @@
+<div class="grid no-gap">
+  <div class="col-12">
+    <ul class="menu">
+      <li>
+        <a href="{{ $.Site.BaseURL }}" class="first_level_menu_item">
+          Начало
+        </a>
+      </li>
+      <li>
+        <a href="{{ ref . "history.md" }}" class="first_level_menu_item">
+          История
+        </a>
+      </li>
+      <li>
+        <a href="{{ $.Site.BaseURL }}/protocol" class="first_level_menu_item">
+          Протокол
+        </a>
+        <div class="second_level_menu">
+          <a href="{{ ref . "protocol/overview.html" }}" class="second_level_menu_item">
+            Въведение
+          </a>
+          <a href="{{ ref . "protocol/client-server-model.md" }}" class="second_level_menu_item">
+            Клиент-сървър модел
+          </a>
+          <a href="{{ ref . "protocol/commands.md" }}" class="second_level_menu_item">
+            Команди в SMTP
+          </a>
+          <a href="{{ ref . "protocol/example.md" }}" class="second_level_menu_item">
+            Примерна SMTP сесия
+          </a>
+          <a href="{{ ref . "protocol/mime.md" }}" class="second_level_menu_item">
+            MIME
+          </a>
+        </div>
+      </li>
+      <li>
+        <a href="{{ ref . "about.md" }}" class="first_level_menu_item">
+          За сайта
+        </a>
+        <div class="second_level_menu">
+          <a href="{{ ref . "about.md" }}" class="second_level_menu_item">
+            За сайта
+          </a>
+          <a href="{{ ref . "sitemap.md" }}" class="second_level_menu_item">
+            Карта са сайта
+          </a>
+          <a href="{{ ref . "sources.md" }}" class="second_level_menu_item">
+            Източници
+          </a>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="col-12">
+    <div class="header-image"></div>
+  </div>
+</div>
