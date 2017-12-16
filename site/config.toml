@@ -1,5 +1,5 @@
-baseurl = "gatsinski.github.io/simple-hugo-website/"
-languageCode = "en-us"
-title = "My New Hugo Site"
+baseurl = "https://gatsinski.github.io/simple-hugo-website/"
+languageCode = "bg-bg"
+title = "Simple Hugo Website"
 staticDir = ["static"]
 publishDir = "docs"
