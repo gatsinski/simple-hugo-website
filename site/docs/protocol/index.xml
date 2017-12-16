@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Protocols on My New Hugo Site</title>
+    <link>gatsinski.github.io/simple-hugo-website/protocol/</link>
+    <description>Recent content in Protocols on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 14 Dec 2017 22:09:17 +0200</lastBuildDate>
+    
+	<atom:link href="gatsinski.github.io/simple-hugo-website/protocol/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Изпращане на писмо във формат MIME</title>
+      <link>gatsinski.github.io/simple-hugo-website/protocol/mime/</link>
+      <pubDate>Thu, 14 Dec 2017 22:09:17 +0200</pubDate>
+      
+      <guid>gatsinski.github.io/simple-hugo-website/protocol/mime/</guid>
+      <description>MIME (multipurpose Internet Mail Extension) е стандарт, предложен от лабораториите Bell Communications през 1991 г. Има за цел разширение на възможностите на елетронната поща и позволява вмъкването в писмото на документи от различен тип (картинки, звук, текст и др.).
+MIME съдържа служебни символни описатели, които се използват за определяне на типа на прикачените към писмото документи, а също и за определяне на типа на документите, пренасяни чрез протокола HTTP.</description>
+    </item>
+    
+    <item>
+      <title>Примерна SMTP сесия</title>
+      <link>gatsinski.github.io/simple-hugo-website/protocol/example/</link>
+      <pubDate>Thu, 14 Dec 2017 22:05:23 +0200</pubDate>
+      
+      <guid>gatsinski.github.io/simple-hugo-website/protocol/example/</guid>
+      <description>R: 220 mgate.tu-sofia.bg EG4000/SMtp Ready
+S: HELO tu-sofia.bg
+R: 250 Requieted mail action okey, completed
+S: MAIL FROM: petar@tu-sofia.bg
+S: 250 OK
+S: RCPT TO: georgi@gmail.com
+R: 550 No such user here
+S: RCPT TO: dimitar@tu-sofia.bg
+R: 250 OK
+S: DATA
+R: 354 Start mail input ; end with .
+S: From: Petar Ivanov
+S: Subject: The Next Meeing of the Board
+S: To: Ivan@tu-sofia.bg
+S:
+S: Срещата ни ще се състои следващата седмица</description>
+    </item>
+    
+    <item>
+      <title>Команди в SMTP</title>
+      <link>gatsinski.github.io/simple-hugo-website/protocol/commands/</link>
+      <pubDate>Thu, 14 Dec 2017 21:38:50 +0200</pubDate>
+      
+      <guid>gatsinski.github.io/simple-hugo-website/protocol/commands/</guid>
+      <description>Командите в SMTP представляват ASCII символни низове, завършващи в последователността CR LF. Те се представят чрез мнемонични кодове от 4 букви и имат до един аргумент с променлива дължина.
+Основни команди в протокола:
+ HELO &amp;lt;адрес на изпращач&amp;gt; MAIL FROM &amp;lt;обратен път&amp;gt; RCPT TO &amp;lt;прав път&amp;gt; DATA RSET HELP [&amp;lt;код на команда&amp;gt;] NOOP QUIT  Описание на командите  HELO &amp;lt;адрес на изпращач&amp;gt; Служи за идентификация на SMTP изпращача пред SMTP получателя.</description>
+    </item>
+    
+    <item>
+      <title>Моделът SMTP - модел клиент-сървър.</title>
+      <link>gatsinski.github.io/simple-hugo-website/protocol/client-server-model/</link>
+      <pubDate>Thu, 14 Dec 2017 21:37:11 +0200</pubDate>
+      
+      <guid>gatsinski.github.io/simple-hugo-website/protocol/client-server-model/</guid>
+      <description>SMTP получателят стартира услугата, очаквайки установяване на връзка на порт 25. При наличие на заявка за изпращане на писмо, SMTP изпращачът установява TCP връзка със SMTP получателя. В последствие SMTP изпращачът и получателят обменят команди и отговори, дакато връзката не бъде прекратена. Крайната цел е писмото да бъде прехвърлено от файловата сисема на изпращача към файловата система на получателя.
+Възможно е писмото дабъде прехвърлено чрез поетапно препредаване посредством множество междинни SMTP възли.</description>
+    </item>
+    
+    <item>
+      <title>Въведение</title>
+      <link>gatsinski.github.io/simple-hugo-website/protocol/overview/</link>
+      <pubDate>Thu, 14 Dec 2017 21:36:21 +0200</pubDate>
+      
+      <guid>gatsinski.github.io/simple-hugo-website/protocol/overview/</guid>
+      <description> Протоколът SMTP служи за прехвърляне на електронна поща от системата, източник на писмото, до системата, върху която се намира пощенската кутия (ПК) на крайния получател. Обменът се реализира чрез протоколни взаимодействия между две страни, SMTP изпращач и SMTP получател. </description>
+    </item>
+    
+  </channel>
+</rss>
