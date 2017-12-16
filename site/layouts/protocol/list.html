@@ -1,0 +1,15 @@
+{{ define "main" }}
+<ul>
+  {{ range .Pages.ByParam "order" }}
+    <li>
+      <h2><a href="{{.URL}}">{{ .Title }}</a></h2>
+      {{ dateFormat "02.01.2006" .Date }} г.
+      {{ if .Params.tags }}<strong>Tags:</strong> {{range .Params.tags}}<a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> {{end}}{{end}}
+      {{ if .Params.categories }}<strong>Categories:</strong> {{range .Params.categories}}<a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> {{end}}{{end}}
+      {{ if .Params.moods }}<strong>Moods:</strong> {{range .Params.moods}}<a href="{{ "/moods/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> {{end}}{{end}}
+      <p style="font-size:18px;">{{.Content}}</p>
+
+    </li>
+  {{ end }}
+</ul>
+{{ end }}

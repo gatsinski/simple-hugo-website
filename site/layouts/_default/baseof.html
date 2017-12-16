@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <title>Simple Mail Transfer Protocol</title>
+    <link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}css/main.css">
+  </head>
+  <body>
+    {{ block "header" . }}
+      {{ partial "header" . }}
+    {{ end }}
+
+
+    <div class="grid no-gap">
+      <div class="col-12 col-sm-6">
+        <div class="content">
+          {{ block "main" . }}{{ end }}
+        </div>
+      </div>
+    </div>
+
+    {{ block "footer" . }}
+      {{ partial "footer" . }}
+    {{ end }}
+
+    <script type="text/javascript" src="{{ .Site.BaseURL }}js/main.js"></script>
+  </body>
+</html>
