@@ -1,7 +1,7 @@
 <html>
   <head>
     <title>Simple Mail Transfer Protocol</title>
-    <link rel="stylesheet" type="text/css" href="gatsinski.github.io/simple-hugo-website/css/main.css">
+    <link rel="stylesheet" type="text/css" href="https://gatsinski.github.io/simple-hugo-website/css/main.css">
   </head>
   <body>
     
@@ -9,49 +9,49 @@
   <div class="col-12">
     <ul class="menu">
       <li>
-        <a href="gatsinski.github.io/simple-hugo-website/" class="first_level_menu_item">
+        <a href="https://gatsinski.github.io/simple-hugo-website/" class="first_level_menu_item">
           Начало
         </a>
       </li>
       <li>
-        <a href="gatsinski.github.io/simple-hugo-website/history/" class="first_level_menu_item">
+        <a href="https://gatsinski.github.io/simple-hugo-website/history/" class="first_level_menu_item">
           История
         </a>
       </li>
       <li>
-        <a href="gatsinski.github.io/simple-hugo-website//protocol" class="first_level_menu_item">
+        <a href="https://gatsinski.github.io/simple-hugo-website//protocol" class="first_level_menu_item">
           Протокол
         </a>
         <div class="second_level_menu">
-          <a href="gatsinski.github.io/simple-hugo-website/protocol/overview/" class="second_level_menu_item">
+          <a href="https://gatsinski.github.io/simple-hugo-website/protocol/overview/" class="second_level_menu_item">
             Въведение
           </a>
-          <a href="gatsinski.github.io/simple-hugo-website/protocol/client-server-model/" class="second_level_menu_item">
+          <a href="https://gatsinski.github.io/simple-hugo-website/protocol/client-server-model/" class="second_level_menu_item">
             Клиент-сървър модел
           </a>
-          <a href="gatsinski.github.io/simple-hugo-website/protocol/commands/" class="second_level_menu_item">
+          <a href="https://gatsinski.github.io/simple-hugo-website/protocol/commands/" class="second_level_menu_item">
             Команди в SMTP
           </a>
-          <a href="gatsinski.github.io/simple-hugo-website/protocol/example/" class="second_level_menu_item">
+          <a href="https://gatsinski.github.io/simple-hugo-website/protocol/example/" class="second_level_menu_item">
             Примерна SMTP сесия
           </a>
-          <a href="gatsinski.github.io/simple-hugo-website/protocol/mime/" class="second_level_menu_item">
+          <a href="https://gatsinski.github.io/simple-hugo-website/protocol/mime/" class="second_level_menu_item">
             MIME
           </a>
         </div>
       </li>
       <li>
-        <a href="gatsinski.github.io/simple-hugo-website/about/" class="first_level_menu_item">
+        <a href="https://gatsinski.github.io/simple-hugo-website/about/" class="first_level_menu_item">
           За сайта
         </a>
         <div class="second_level_menu">
-          <a href="gatsinski.github.io/simple-hugo-website/about/" class="second_level_menu_item">
+          <a href="https://gatsinski.github.io/simple-hugo-website/about/" class="second_level_menu_item">
             За сайта
           </a>
-          <a href="gatsinski.github.io/simple-hugo-website/sitemap/" class="second_level_menu_item">
+          <a href="https://gatsinski.github.io/simple-hugo-website/sitemap/" class="second_level_menu_item">
             Карта са сайта
           </a>
-          <a href="gatsinski.github.io/simple-hugo-website/sources/" class="second_level_menu_item">
+          <a href="https://gatsinski.github.io/simple-hugo-website/sources/" class="second_level_menu_item">
             Източници
           </a>
         </div>
@@ -72,21 +72,22 @@
           
 
   <div>
-    <h1>Въведение</h1>
-    14.12.2017 г.
+    <h1>Общ преглед</h1>
+    10.12.2017 г.
     
     
     
 
     <p>
-      <p>
-  <img src="/images/logo.jpg" width="200px">
-  <br>
-  Протоколът SMTP служи за прехвърляне на електронна поща от системата,
-  източник на писмото, до системата, върху която се намира пощенската кутия (ПК)
-  на крайния получател. Обменът се реализира чрез протоколни взаимодействия
-  между две страни, SMTP изпращач и SMTP получател.
-</p>
+      <p><strong>Simple Mail Transfer Protocol</strong> или просто SMTP е интернет стандарт за пренос на електронна поща (email). Описан е за пръв път от <em>RFC 821</em> през 1982, а последното му обновяване става през 2008 г. с добавянето на <em>Extended SMTP</em> (Разширен SMTP) от <em>RFC 5321</em>. Разширената версия на протокола е най-разпространената в днешно време.</p>
+
+<p>Въпреки че пощенските сървъри и други услуги за пренос на съобщения използват SMTP както за изпращане, така и за получаване на съобщенията, на потрбителско ниво обикновено протокола се използва само за изпращане на съобщеня, докато за получване се предпочитат протоколите IMAP и POP3.</p>
+
+<p>SMTP комуникацията между пощенските сървъри използват TCP протокола рез порт 25. Пощенските клиенти от друга страна, често подават изходящи писма на порт 587. Въпреки, че е изваден от стандарта, някои доствчици на пощенски услуги все още позволяват да се използва порт 465 за същата цел.</p>
+
+<p>SMTP връзки, защитени с TLS, са известни още като SMTPS.</p>
+
+<p>Въпреки че някои частни системи, като Microsoft Exchange и IBM Notes, и уебмейл системи, като Outlook, GMail и Yahoo! Mail, използват свои собствени нестандартни протоколи за достъп до пощенските кутии на своите собствени сървъри, всички използват SMTP, когато изпращат или получават съобщения от други системи.</p>
 
     </p>
   </div>
@@ -107,6 +108,6 @@
 
     
 
-    <script type="text/javascript" src="gatsinski.github.io/simple-hugo-website/js/main.js"></script>
+    <script type="text/javascript" src="https://gatsinski.github.io/simple-hugo-website/js/main.js"></script>
   </body>
 </html>
