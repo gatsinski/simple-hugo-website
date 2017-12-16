@@ -1,42 +1,42 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>My New Hugo Site</title>
-    <link>gatsinski.github.io/simple-hugo-website/</link>
-    <description>Recent content on My New Hugo Site</description>
+    <title>Simple Hugo Website</title>
+    <link>https://gatsinski.github.io/simple-hugo-website/</link>
+    <description>Recent content on Simple Hugo Website</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>bg-bg</language>
     <lastBuildDate>Thu, 14 Dec 2017 22:22:24 +0200</lastBuildDate>
     
-	<atom:link href="gatsinski.github.io/simple-hugo-website/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://gatsinski.github.io/simple-hugo-website/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Sources</title>
-      <link>gatsinski.github.io/simple-hugo-website/sources/</link>
+      <link>https://gatsinski.github.io/simple-hugo-website/sources/</link>
       <pubDate>Thu, 14 Dec 2017 22:22:24 +0200</pubDate>
       
-      <guid>gatsinski.github.io/simple-hugo-website/sources/</guid>
+      <guid>https://gatsinski.github.io/simple-hugo-website/sources/</guid>
       <description>Използвани източници:
  Компютърни мрежи - Георги Найденов, Технически университет - София, 2017 Simple Mail Transfer Protocol - Wikipedia.org  </description>
     </item>
     
     <item>
       <title>Изпращане на писмо във формат MIME</title>
-      <link>gatsinski.github.io/simple-hugo-website/protocol/mime/</link>
+      <link>https://gatsinski.github.io/simple-hugo-website/protocol/mime/</link>
       <pubDate>Thu, 14 Dec 2017 22:09:17 +0200</pubDate>
       
-      <guid>gatsinski.github.io/simple-hugo-website/protocol/mime/</guid>
+      <guid>https://gatsinski.github.io/simple-hugo-website/protocol/mime/</guid>
       <description>MIME (multipurpose Internet Mail Extension) е стандарт, предложен от лабораториите Bell Communications през 1991 г. Има за цел разширение на възможностите на елетронната поща и позволява вмъкването в писмото на документи от различен тип (картинки, звук, текст и др.).
 MIME съдържа служебни символни описатели, които се използват за определяне на типа на прикачените към писмото документи, а също и за определяне на типа на документите, пренасяни чрез протокола HTTP.</description>
     </item>
     
     <item>
       <title>Примерна SMTP сесия</title>
-      <link>gatsinski.github.io/simple-hugo-website/protocol/example/</link>
+      <link>https://gatsinski.github.io/simple-hugo-website/protocol/example/</link>
       <pubDate>Thu, 14 Dec 2017 22:05:23 +0200</pubDate>
       
-      <guid>gatsinski.github.io/simple-hugo-website/protocol/example/</guid>
+      <guid>https://gatsinski.github.io/simple-hugo-website/protocol/example/</guid>
       <description>R: 220 mgate.tu-sofia.bg EG4000/SMtp Ready
 S: HELO tu-sofia.bg
 R: 250 Requieted mail action okey, completed
@@ -57,10 +57,10 @@ S: Срещата ни ще се състои следващата седмиц�
     
     <item>
       <title>Команди в SMTP</title>
-      <link>gatsinski.github.io/simple-hugo-website/protocol/commands/</link>
+      <link>https://gatsinski.github.io/simple-hugo-website/protocol/commands/</link>
       <pubDate>Thu, 14 Dec 2017 21:38:50 +0200</pubDate>
       
-      <guid>gatsinski.github.io/simple-hugo-website/protocol/commands/</guid>
+      <guid>https://gatsinski.github.io/simple-hugo-website/protocol/commands/</guid>
       <description>Командите в SMTP представляват ASCII символни низове, завършващи в последователността CR LF. Те се представят чрез мнемонични кодове от 4 букви и имат до един аргумент с променлива дължина.
 Основни команди в протокола:
  HELO &amp;lt;адрес на изпращач&amp;gt; MAIL FROM &amp;lt;обратен път&amp;gt; RCPT TO &amp;lt;прав път&amp;gt; DATA RSET HELP [&amp;lt;код на команда&amp;gt;] NOOP QUIT  Описание на командите  HELO &amp;lt;адрес на изпращач&amp;gt; Служи за идентификация на SMTP изпращача пред SMTP получателя.</description>
@@ -68,57 +68,48 @@ S: Срещата ни ще се състои следващата седмиц�
     
     <item>
       <title>Моделът SMTP - модел клиент-сървър.</title>
-      <link>gatsinski.github.io/simple-hugo-website/protocol/client-server-model/</link>
+      <link>https://gatsinski.github.io/simple-hugo-website/protocol/client-server-model/</link>
       <pubDate>Thu, 14 Dec 2017 21:37:11 +0200</pubDate>
       
-      <guid>gatsinski.github.io/simple-hugo-website/protocol/client-server-model/</guid>
+      <guid>https://gatsinski.github.io/simple-hugo-website/protocol/client-server-model/</guid>
       <description>SMTP получателят стартира услугата, очаквайки установяване на връзка на порт 25. При наличие на заявка за изпращане на писмо, SMTP изпращачът установява TCP връзка със SMTP получателя. В последствие SMTP изпращачът и получателят обменят команди и отговори, дакато връзката не бъде прекратена. Крайната цел е писмото да бъде прехвърлено от файловата сисема на изпращача към файловата система на получателя.
 Възможно е писмото дабъде прехвърлено чрез поетапно препредаване посредством множество междинни SMTP възли.</description>
     </item>
     
     <item>
-      <title>Въведение</title>
-      <link>gatsinski.github.io/simple-hugo-website/protocol/overview/</link>
-      <pubDate>Thu, 14 Dec 2017 21:36:21 +0200</pubDate>
-      
-      <guid>gatsinski.github.io/simple-hugo-website/protocol/overview/</guid>
-      <description> Протоколът SMTP служи за прехвърляне на електронна поща от системата, източник на писмото, до системата, върху която се намира пощенската кутия (ПК) на крайния получател. Обменът се реализира чрез протоколни взаимодействия между две страни, SMTP изпращач и SMTP получател. </description>
-    </item>
-    
-    <item>
       <title>Sitemap</title>
-      <link>gatsinski.github.io/simple-hugo-website/sitemap/</link>
+      <link>https://gatsinski.github.io/simple-hugo-website/sitemap/</link>
       <pubDate>Thu, 14 Dec 2017 20:40:26 +0200</pubDate>
       
-      <guid>gatsinski.github.io/simple-hugo-website/sitemap/</guid>
+      <guid>https://gatsinski.github.io/simple-hugo-website/sitemap/</guid>
       <description></description>
     </item>
     
     <item>
       <title>История</title>
-      <link>gatsinski.github.io/simple-hugo-website/history/</link>
+      <link>https://gatsinski.github.io/simple-hugo-website/history/</link>
       <pubDate>Sun, 10 Dec 2017 14:21:27 +0200</pubDate>
       
-      <guid>gatsinski.github.io/simple-hugo-website/history/</guid>
+      <guid>https://gatsinski.github.io/simple-hugo-website/history/</guid>
       <description>През 60-те години на ХХ век са използвани различни форми на предване на съобщения от тип one-to-one. В повечето случаи тази комуникация се е осъществявала чрез системи, разработени за специфични mainframe машини. С нарастването на броя на компютрите, свързани помежду си, особено в рамките на ARPANET, започва разработването на стандарти, които да позволят на потребителите на различни системи, да изпращат и получават email-и помежду си. SMTP е изграден на база същите тези стандарти.</description>
     </item>
     
     <item>
       <title>Общ преглед</title>
-      <link>gatsinski.github.io/simple-hugo-website/overview/</link>
+      <link>https://gatsinski.github.io/simple-hugo-website/protocol/overview/</link>
       <pubDate>Sun, 10 Dec 2017 11:16:40 +0200</pubDate>
       
-      <guid>gatsinski.github.io/simple-hugo-website/overview/</guid>
+      <guid>https://gatsinski.github.io/simple-hugo-website/protocol/overview/</guid>
       <description>Simple Mail Transfer Protocol или просто SMTP е интернет стандарт за пренос на електронна поща (email). Описан е за пръв път от RFC 821 през 1982, а последното му обновяване става през 2008 г. с добавянето на Extended SMTP (Разширен SMTP) от RFC 5321. Разширената версия на протокола е най-разпространената в днешно време.
 Въпреки че пощенските сървъри и други услуги за пренос на съобщения използват SMTP както за изпращане, така и за получаване на съобщенията, на потрбителско ниво обикновено протокола се използва само за изпращане на съобщеня, докато за получване се предпочитат протоколите IMAP и POP3.</description>
     </item>
     
     <item>
       <title>За сайта</title>
-      <link>gatsinski.github.io/simple-hugo-website/about/</link>
+      <link>https://gatsinski.github.io/simple-hugo-website/about/</link>
       <pubDate>Thu, 07 Dec 2017 21:54:15 +0200</pubDate>
       
-      <guid>gatsinski.github.io/simple-hugo-website/about/</guid>
+      <guid>https://gatsinski.github.io/simple-hugo-website/about/</guid>
       <description>Този сайт представлява курсов проект по дисциплината Компютърни мрежи в Технически университет - София и е разработен изцяло с учебна цел. Целият код на проекта е публично достъпен в GitHub.com и се разпространява под GNU GPLv3 лиценз.
 Структурата на сайта и процесът на разработването му са съобразени с всички съвременни изисквания. Потребителският интерфейс е направен еднакво достъпен и удобен както за мобилни устройства, така и за десктоп.
 Използвани технологии За създаването на сайта са използвани стандартни WEB технологии.</description>
