@@ -4,6 +4,18 @@ body {
   margin: 0px auto;
 }
 
+p {
+  font-family: "Times New Roman", Georgia, Serif;
+}
+
+thead {
+  font-weight: bold;
+}
+
+td {
+  padding: 5px
+}
+
 ul.menu {
   list-style-type: none;
   margin: 0;
