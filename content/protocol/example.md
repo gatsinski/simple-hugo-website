@@ -6,7 +6,7 @@ draft: false
 order: 4
 ---
 
-R: 220 mgate.tu-sofia.bg EG4000/SMtp Ready
+R: 220 mgate.tu-sofia.bg EG4000/SMTP Ready
 
 S: HELO tu-sofia.bg
 
@@ -30,7 +30,7 @@ R: 354 Start mail input ; end with <CRLF>.<CRLF>
 
 S: From: Petar Ivanov
 
-S: Subject: The Next Meeing of the Board
+S: Subject: The Next Meeting of the Board
 
 S: To: Ivan@tu-sofia.bg
 
