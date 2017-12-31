@@ -4,6 +4,7 @@ body {
   margin: 0px auto;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 15px;
+  line-height: 1.7em;
 }
 
 h1 {
@@ -80,7 +81,11 @@ ul.menu > li:hover div.second_level_menu {
 
 .content {
   background: #fff;
-  padding: 20px;
+  padding: 20px 50px;
+}
+
+.centered-text {
+  text-align: center;
 }
 
 .footer {
@@ -184,10 +189,26 @@ ul.menu > li:hover div.second_level_menu {
   .col-sm-6 {
     grid-column: span 12;
   }
+
+  .content {
+    padding: 10px 8px;
+  }
+
+  img {
+    width: 400px;
+  }
 }
 
 @media (max-width: 350px) {
   .grid {
     display: block;
+  }
+
+  .content {
+    padding: 10px 3px;
+  }
+
+  img {
+    width: 300px;
   }
 }
