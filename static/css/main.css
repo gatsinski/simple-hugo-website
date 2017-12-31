@@ -2,10 +2,17 @@ body {
   background: #ddd;
   max-width: 1080px;
   margin: 0px auto;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+}
+
+h1 {
+  font-size: 24px;
 }
 
 p {
   font-family: "Times New Roman", Georgia, Serif;
+  font-size: 17px;
 }
 
 thead {
