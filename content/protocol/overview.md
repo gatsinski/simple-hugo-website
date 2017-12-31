@@ -14,7 +14,7 @@ order: 1
 
 SMTP комуникацията между пощенските сървъри използват TCP протокола рез порт 25. Пощенските клиенти от друга страна, често подават изходящи писма на порт 587. Въпреки, че е изваден от стандарта, някои доствчици на пощенски услуги все още позволяват да се използва порт 465 за същата цел.
 
-SMTP връзки, защитени с TLS, са известни още като SMTPS.
+SMTP връзки, защитени с <abbr title="Transport Layer Security">TLS</abbr>, са известни още като <abbr title="Simple Mail Transfer Protocol Secure">SMTPS</abbr>.
 
 <img align="right" alt="Рисунка на пътуващ пощенски плик" src="/simple-hugo-website/images/mail-drawing.png">
 
