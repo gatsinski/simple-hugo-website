@@ -36,7 +36,7 @@
             Примерна SMTP сесия
           </a>
           <a href="https://gatsinski.github.io/simple-hugo-website/protocol/mime/" class="second_level_menu_item">
-            MIME
+            MIME типове
           </a>
         </div>
       </li>
@@ -87,29 +87,29 @@
 <p>Основни команди в протокола:</p>
 
 <ul>
-<li><strong>HELO</strong> &lt;адрес на изпращач&gt;</li>
-<li><strong>MAIL</strong> FROM &lt;обратен път&gt;</li>
-<li><strong>RCPT</strong> TO &lt;прав път&gt;</li>
-<li><strong>DATA</strong></li>
-<li><strong>RSET</strong></li>
-<li><strong>HELP</strong> [&lt;код на команда&gt;]</li>
-<li><strong>NOOP</strong></li>
-<li><strong>QUIT</strong></li>
+<li><a href="#helo"><strong>HELO</strong></a> &lt;адрес на изпращач&gt;</li>
+<li><a href="#mailFrom"><strong>MAIL FROM</strong></a> &lt;обратен път&gt;</li>
+<li><a href="#rcptTo"><strong>RCPT TO</strong></a> &lt;прав път&gt;</li>
+<li><a href="#data"><strong>DATA</strong></a></li>
+<li><a href="#rset"><strong>RSET</strong></a></li>
+<li><a href="#help"><strong>HELP</strong></a> [&lt;код на команда&gt;]</li>
+<li><a href="#noop"><strong>NOOP</strong></a></li>
+<li><a href="#quit"><strong>QUIT</strong></a></li>
 </ul>
 
 <h2 id="описание-на-командите">Описание на командите</h2>
 
 <ul>
-<li><p><strong>HELO</strong> &lt;адрес на изпращач&gt;
+<li><p><span id="helo"><strong>HELO</strong></span> &lt;адрес на изпращач&gt;
 Служи за идентификация на SMTP изпращача пред SMTP получателя. Аргументът съдържа интернет адреса на системата SMTP изпращач.</p></li>
 
-<li><p><strong>MAIL FROM</strong> &lt;обртен път&gt;
+<li><p><span id="mailFrom"><strong>MAIL FROM</strong></span> &lt;обратен път&gt;
 Инициализира транзакция за обмен на писмо, което ще бъде изпратено до една или няколко потребителски пощенски кутии. Обратният път служи за уведомяване на подателя на писмото, в случай на възникване на грешка в процеса на доставянето му.</p></li>
 
-<li><p><strong>RCPT TO</strong> &lt;прав път&gt;
+<li><p><span id="rcptTo"><strong>RCPT TO</strong></span> &lt;прав път&gt;
 Указва крайния получател на писмото. Ако писмото трябва да бъде доставено до множество плучатели, командата се издава многократно.</p></li>
 
-<li><p><strong>DATA</strong>
+<li><p><span id="data"><strong>DATA</strong></span>
 Определя началото на изпращане на писмото. При получаване на тази команда SMTP получателя изпраща положителен отговор и тълкува слеващите приети редове на съдържание на писмото.
 Краят на писмото се определя от ред, съдържащ <CR LF>. <CR LF>.
 При получаването му SMTP получателят изпраща положителен отговор. С цел съхраняване на прозрачността на данните от писмото, се спазва следната процедура.</p>
@@ -119,16 +119,16 @@
 <li>SMTP получателят анализира получените редове. Ако първият символ е точка и редът не съдържа други символи, тове е индикатор за край на писмото. Ако първият символ е точка и редът съдържа други символи, точката бива премахната.</li>
 </ul></li>
 
-<li><p><strong>RSET</strong>
+<li><p><span id="rset"><strong>RSET</strong></span>
 Прекратява изпълнението на текущата транзакция.</p></li>
 
-<li><p><strong>HELP</strong> [&lt;код на команда&gt;]
+<li><p><span id="help"><strong>HELP</strong></span> [&lt;код на команда&gt;]
 Командата изисква SMTP получателят да върне помощна информация за заявената команда. Ако аргументът липсва, се връща информация за всички команди, които SMTP получателят може да изпълни.</p></li>
 
-<li><p><strong>NOOP</strong>
+<li><p><span id="noop"><strong>NOOP</strong></span>
 Командата не предизвиква никакви действия. SMTP получателят връща положителен отговор ОК.</p></li>
 
-<li><p><strong>QUIT</strong>
+<li><p><span id="quit"><strong>QUIT</strong></span>
 Командата казва на SMTP получателят да прекрати TCP връзката.</p></li>
 </ul>
 
