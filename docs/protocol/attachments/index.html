@@ -1,0 +1,168 @@
+<html>
+  <head>
+    <title>Simple Mail Transfer Protocol</title>
+    <link rel="stylesheet" type="text/css" href="https://gatsinski.github.io/simple-hugo-website/css/main.css">
+  </head>
+  <body>
+    
+      <div class="grid no-gap">
+  <div class="col-12">
+    <ul class="menu">
+      <li>
+        <a href="https://gatsinski.github.io/simple-hugo-website/" class="first_level_menu_item">
+          Начало
+        </a>
+      </li>
+      <li>
+        <a href="https://gatsinski.github.io/simple-hugo-website/history/" class="first_level_menu_item">
+          История
+        </a>
+      </li>
+      <li>
+        <a href="https://gatsinski.github.io/simple-hugo-website//protocol" class="first_level_menu_item">
+          Протокол
+        </a>
+        <div class="second_level_menu">
+          <a href="https://gatsinski.github.io/simple-hugo-website/protocol/overview/" class="second_level_menu_item">
+            Въведение
+          </a>
+          <a href="https://gatsinski.github.io/simple-hugo-website/protocol/client-server-model/" class="second_level_menu_item">
+            Клиент-сървър модел
+          </a>
+          <a href="https://gatsinski.github.io/simple-hugo-website/protocol/commands/" class="second_level_menu_item">
+            Команди в SMTP
+          </a>
+          <a href="https://gatsinski.github.io/simple-hugo-website/protocol/example/" class="second_level_menu_item">
+            Примерна SMTP сесия
+          </a>
+          <a href="https://gatsinski.github.io/simple-hugo-website/protocol/attachments/" class="second_level_menu_item">
+            Прикачени файлове
+          </a>
+        </div>
+      </li>
+      <li>
+        <a href="https://gatsinski.github.io/simple-hugo-website/about/" class="first_level_menu_item">
+          За сайта
+        </a>
+        <div class="second_level_menu">
+          <a href="https://gatsinski.github.io/simple-hugo-website/about/" class="second_level_menu_item">
+            За сайта
+          </a>
+          <a href="https://gatsinski.github.io/simple-hugo-website/sitemap/" class="second_level_menu_item">
+            Карта са сайта
+          </a>
+          <a href="https://gatsinski.github.io/simple-hugo-website/sources/" class="second_level_menu_item">
+            Източници
+          </a>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="col-12">
+    <div class="header-image"></div>
+  </div>
+</div>
+
+    
+
+
+    <div class="grid no-gap">
+      <div class="col-12 col-sm-6">
+        <div class="content">
+          
+
+  <div>
+    <h1>Изпращане на писмо с прикачени файлове</h1>
+    14.12.2017 г.
+    <hr>
+    
+    
+    
+
+    <p>
+      
+
+<p>За изпращане на прикачени файлове в писмата се използва стандартът <strong>MIME</strong> (Multipurpose Internet Mail Extension). Той е предложен от лабораториите <em>Bell Communications</em> през 1991 г. Целта му е да се разширят възможностите на елетронната поща и да се позволи вмъкването в писмото на документи от различен тип (изображения, звук, текст и др.). Описан е в шест свързани документа, първият от които е <a href="https://tools.ietf.org/html/rfc2045"><em>RFC 2045</em></a>.</p>
+
+<p>MIME съдържа служебни символни описатели, които се използват за определяне на типа на прикачените към писмото документи, а също и за определяне на типа на документите, пренасяни чрез протокола HTTP.</p>
+
+<p>Стандартът въвежда група заглавни данни (хедъри), които се добавят към всяко съобщение и предоставят информация, необходима за прочитането на съдържанието му.</p>
+
+<ul>
+<li><p>MIME-Version - За да се обозначи използването на MIME към съобщението се добавя хедър с версията. Обикновено тя е 1.0 и хедъра придобива вида &ldquo;<em>MIME-Version: 1.0</em>&rdquo;.</p></li>
+
+<li><p>Content-Type - Този хедър индикира типа на мултимедииното съдържание на съобщението и се състои от тип и подтип.</p>
+
+<ul>
+<li>Content-Type: text/plain</li>
+<li>Content-Type: text/html</li>
+<li>Content-Type: video/mpeg</li>
+<li>Content-Type: image/jpeg</li>
+<li>Content-Type: image/gif</li>
+</ul></li>
+
+<li><p>Content-Disposition - Оригиналната MIME спецификация описва само структурата на e-mail съобщенията без да описва начина на показването му. Този хедър е добаве в RFC 2183 и прави точно това. Възможните му стойности са:</p>
+
+<ul>
+<li><em>inline</em> - Съдържанието се показва директно в писмото.</li>
+<li><em>attachment</em> - Прикачените файлове не се показват автоматично с текста и се изисква допълнително действие от страна на потребителя, за да ги отвори.</li>
+</ul></li>
+
+<li><p>Content-Transfer-Encoding - Позволява изпращането на бинарни данни във формат, различен от ASCII символи. Възможностите са:</p>
+
+<ul>
+<li>7-bit - ASCII символи, до 998 байта (октети) на ред.</li>
+<li>8-bit - до 998 байта (октети) на ред.</li>
+<li>quoted-printable</li>
+<li>base64</li>
+<li>binary - всякаква поредица от байтове.</li>
+</ul></li>
+
+<li><p>Content-ID - уникален идентификатор.</p></li>
+</ul>
+
+<h3 id="примерно-писмо">Примерно писмо</h3>
+
+<p><cite>
+MIME-Version: 1.0 <br>
+Content-Type: multipart/mixed; boundary=frontier <br>
+From: Hristo Gatsinski &lt;gatsinski@tu-sofia.bg&gt; <br>
+To: Ivan Ivanov &lt;ivanov@tu-sofia.bg&gt; <br>
+Subject: &ldquo;Тема на примерното писмо&rdquo; <br>
+<br>
+--frontier <br>
+Content-Type: text/plain <br>
+<br>
+Съдържание на писмото. <br>
+<br>
+--frontier <br>
+Content-Type: application/octet-stream <br>
+Content-Transfer-Encoding: base64 <br>
+<br>
+PGh0bWw+CiAgPGhlYWQ+CiAgPC9oZWFkPgogIDxib2R5PgogICAgPHA+VGhpcyBpcyB0aGUg
+Ym9keSBvZiB0aGUgbWVzc2FnZS48L3A+CiAgPC9ib2R5Pgo8L2h0bWw+Cg== <br>
+--frontier-- <br>
+</cite></p>
+
+    </p>
+  </div>
+
+
+        </div>
+      </div>
+    </div>
+
+    
+      <div class="grid no-gap">
+  <div class="col-12">
+    <div class="footer">
+      &copy; 2018 Hristo Gatsinski
+    </div>
+  </div>
+</div>
+
+    
+
+    <script type="text/javascript" src="https://gatsinski.github.io/simple-hugo-website/js/main.js"></script>
+  </body>
+</html>

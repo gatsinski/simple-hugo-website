@@ -35,8 +35,8 @@
           <a href="https://gatsinski.github.io/simple-hugo-website/protocol/example/" class="second_level_menu_item">
             Примерна SMTP сесия
           </a>
-          <a href="https://gatsinski.github.io/simple-hugo-website/protocol/mime/" class="second_level_menu_item">
-            MIME типове
+          <a href="https://gatsinski.github.io/simple-hugo-website/protocol/attachments/" class="second_level_menu_item">
+            Прикачени файлове
           </a>
         </div>
       </li>
@@ -86,7 +86,7 @@
     <img width="500px" alt="Моделът клиент сървър" src="/simple-hugo-website/images/smtp-model.png">
 </div>
 
-<p>Възможно е писмото дабъде прехвърлено чрез поетапно препредаване посредством множество междинни SMTP възли.</p>
+<p>Възможно е връзката между получателят и изпращачът да не бъде директна и за предаване на съобщението да се използват множество междинни SMTP възли, които да го препращат, докато то достигне крайната си дестинация.</p>
 
 <div class="centered-text">
     <img width="500px" alt="Моделът клиент сървър при препращане между възли" src="/simple-hugo-website/images/smtp-model-step-by-step.png">
@@ -109,13 +109,17 @@
 <li>първият адрес в обратния път трябва да е винаги този на SMTP изпращача.</li>
 </ul>
 
-<p>При тази концепция, по време на преминаването на писмото през междинните SMTP сървъри, всеки от тях премахва своя адрес от правия път и го добавя в обратния. Така постепенно елементите от правия път се преместват към обратния път.</p>
+<p>При тази концепция, по време на преминаването на писмото през междинните SMTP сървъри, всеки от тях премахва своя адрес от правия път и го добавя в обратния. Така постепенно елементите от правия път се преместват в обратния път.</p>
 
 <div class="centered-text">
     <img width="600px" alt="Моделът клиент сървър при изпращане между възли с показани пътища" src="/simple-hugo-website/images/smtp-model-step-by-step-with-paths.png">
 </div>
 
 <p>По време на своето съществуване SMTP сесията преминава през няколко състояния.</p>
+
+<div class="centered-text">
+    <img width="400px" alt="Възможни състояния на SMTP комуникацията" src="/simple-hugo-website/images/smtp-states-full.png">
+</div>
 
 <p><img width="400px" align="right" alt="Възможни състояния на SMTP комуникацията" src="/simple-hugo-website/images/smtp-states.png"></p>
 
@@ -127,6 +131,8 @@
 <li>в състояние &ldquo;Трансакция&rdquo; (TRANSACTION) се изпраща едно писмо, след което се осъществява връщане в състояние &ldquo;Изчакване&rdquo;.</li>
 <li>прекратяването на сесията започва по инициатива на SMTP изпращача чрез команда QUIT, която води до прекъсване на TCP връзката.</li>
 </ul>
+
+<p>Командите HELO, MAIL, RCPT, RSET, SEND, SOML, SAML, VRFY, EXPN, HELP, NOOP, QUIT и TURN. имат три възможни изхода - Успех, Неуспех и Грешка.</p>
 
     </p>
   </div>
@@ -140,7 +146,7 @@
       <div class="grid no-gap">
   <div class="col-12">
     <div class="footer">
-      &copy; 2017 Hristo Gatsinski
+      &copy; 2018 Hristo Gatsinski
     </div>
   </div>
 </div>
