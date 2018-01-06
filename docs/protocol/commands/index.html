@@ -35,8 +35,8 @@
           <a href="https://gatsinski.github.io/simple-hugo-website/protocol/example/" class="second_level_menu_item">
             Примерна SMTP сесия
           </a>
-          <a href="https://gatsinski.github.io/simple-hugo-website/protocol/mime/" class="second_level_menu_item">
-            MIME типове
+          <a href="https://gatsinski.github.io/simple-hugo-website/protocol/attachments/" class="second_level_menu_item">
+            Прикачени файлове
           </a>
         </div>
       </li>
@@ -82,14 +82,14 @@
     <p>
       
 
-<p>Командите в SMTP представляват ASCII символни низове, завършващи в последователността CR LF. Те се представят чрез мнемонични кодове от 4 букви и имат до един аргумент с променлива дължина.</p>
+<p>Командите в SMTP представляват ASCII символни низове, завършващи в последователността <CRLF> (край на ред). Те се представят чрез кодове от 4 букви и имат до един аргумент с променлива дължина. Краят на командата и началото на аргумента се обозначава със <SP> (празен интервал).</p>
 
 <p>Основни команди в протокола:</p>
 
 <ul>
 <li><a href="#helo"><strong>HELO</strong></a> &lt;адрес на изпращач&gt;</li>
-<li><a href="#mailFrom"><strong>MAIL FROM</strong></a> &lt;обратен път&gt;</li>
-<li><a href="#rcptTo"><strong>RCPT TO</strong></a> &lt;прав път&gt;</li>
+<li><a href="#mail"><strong>MAIL</strong></a> &lt;обратен път&gt;</li>
+<li><a href="#rcpt"><strong>RCPT</strong></a> &lt;прав път&gt;</li>
 <li><a href="#data"><strong>DATA</strong></a></li>
 <li><a href="#rset"><strong>RSET</strong></a></li>
 <li><a href="#help"><strong>HELP</strong></a> [&lt;код на команда&gt;]</li>
@@ -103,15 +103,15 @@
 <li><p><span id="helo"><strong>HELO</strong></span> &lt;адрес на изпращач&gt;
 Служи за идентификация на SMTP изпращача пред SMTP получателя. Аргументът съдържа интернет адреса на системата SMTP изпращач.</p></li>
 
-<li><p><span id="mailFrom"><strong>MAIL FROM</strong></span> &lt;обратен път&gt;
+<li><p><span id="mail"><strong>MAIL</strong></span> &lt;обратен път&gt;
 Инициализира транзакция за обмен на писмо, което ще бъде изпратено до една или няколко потребителски пощенски кутии. Обратният път служи за уведомяване на подателя на писмото, в случай на възникване на грешка в процеса на доставянето му.</p></li>
 
-<li><p><span id="rcptTo"><strong>RCPT TO</strong></span> &lt;прав път&gt;
-Указва крайния получател на писмото. Ако писмото трябва да бъде доставено до множество плучатели, командата се издава многократно.</p></li>
+<li><p><span id="rcpt"><strong>RCPT</strong></span> &lt;прав път&gt;
+Указва крайния получател на писмото. Ако писмото трябва да бъде доставено до множество плучатели, командата се използва многократно.</p></li>
 
 <li><p><span id="data"><strong>DATA</strong></span>
 Определя началото на изпращане на писмото. При получаване на тази команда SMTP получателя изпраща положителен отговор и тълкува слеващите приети редове на съдържание на писмото.
-Краят на писмото се определя от ред, съдържащ <CR LF>. <CR LF>.
+Краят на писмото се определя от ред, съдържащ &ldquo;<CRLF>.<CRLF>&rdquo;.
 При получаването му SMTP получателят изпраща положителен отговор. С цел съхраняване на прозрачността на данните от писмото, се спазва следната процедура.</p>
 
 <ul>
@@ -154,7 +154,7 @@
       <div class="grid no-gap">
   <div class="col-12">
     <div class="footer">
-      &copy; 2017 Hristo Gatsinski
+      &copy; 2018 Hristo Gatsinski
     </div>
   </div>
 </div>
